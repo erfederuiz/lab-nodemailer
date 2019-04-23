@@ -103,9 +103,7 @@ router.get('/confirm/:confirmCode',(req,res)=>{
       res.render("auth/login", { message: "Profile verified." });
     })
   })
-  .catch(
-    res.redirect("/")
-  );
+  .catch(error => {res.redirect("/")});
 });
 
 router.get("/logout", (req, res) => {
